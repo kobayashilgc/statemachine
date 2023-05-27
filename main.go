@@ -46,5 +46,5 @@ func main() {
 		panic(err)
 	}
 	// update the machine
-	m.Update(nil)
+	m.Update(1, 1)
 }

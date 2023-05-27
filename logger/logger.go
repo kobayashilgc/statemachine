@@ -1,4 +1,4 @@
-package statemachine
+package logger
 
 import (
 	"github.com/sirupsen/logrus"

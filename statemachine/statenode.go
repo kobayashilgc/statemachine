@@ -1,20 +1,23 @@
 package statemachine
 
+import "github.com/google/uuid"
+
 type StateNode struct {
+	uuid  uuid.UUID
 	name  string
 	info  string
 	edges []*Edge
 }
 
 type IStateNode interface {
-	Set(name, info string, e []*Edge)
+	GetUUID() uuid.UUID
 	GetName() string
 	GetInfo() string
 	Trans(args ...interface{}) *StateNode
 }
 
-func (n *StateNode) Set(name, info string, e []*Edge) {
-	n.name, n.info, n.edges = name, info, e
+func (n *StateNode) GetUUID() uuid.UUID {
+	return n.uuid
 }
 
 func (n *StateNode) GetName() string {
@@ -22,7 +25,7 @@ func (n *StateNode) GetName() string {
 }
 
 func (n *StateNode) GetInfo() string {
-	return n.name
+	return n.info
 }
 
 // Trans - trans to next state, if no edge is ok, return current node itself

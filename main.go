@@ -1,10 +1,3 @@
-# statemachine
-
-go version state machine
-
-## How to use
-
-```go
 package main
 
 import (
@@ -55,5 +48,3 @@ func main() {
 	// update the machine
 	m.Update(nil)
 }
-
-```
